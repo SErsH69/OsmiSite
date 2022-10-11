@@ -1,0 +1,189 @@
+<section class="company-team" :class="{'mobile': window.width <=1023}">
+    <h1 class="company-team-title animated-title">
+        Команда
+    </h1>
+    <!-- <div class="company-team-items">
+        @@for (var i = 0; i < 10; i++) {
+            <div class="company-team-item">
+                <div class="company-team-item-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+                <div class="company-team-item-more" v-if="window.width <= 1023">
+                    <div class="text">Подробнее</div>
+                </div>
+                <div class="company-team-item-info">
+                    <div class="image">
+                        <img src="img/team_info.png" width="100%" height="100%" alt="">
+                    </div>
+                    <div class="info">
+                        <div class="left">
+                            <div class="name">Анна Иванова</div>
+                            <div class="position">маркетолог</div>
+                        </div>
+                        <div class="right">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 38">
+                                    <path d="M18.6895 21.2136L19.726 14.3883H13.242V9.96117C13.242 8.09348 14.1461 6.27184 17.0503 6.27184H20V0.461165C20 0.461165 17.3242 0 14.7671 0C9.42473 0 5.93611 3.26962 5.93611 9.18641V14.3883H0V21.2136H5.93611V37.7141C7.12785 37.9032 8.34706 38 9.58907 38C10.8311 38 12.0503 37.9032 13.242 37.7141V21.2136H18.6895Z"/>
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 38 38">
+                                    <path d="M32.3 8.55C32.3 10.124 31.024 11.4 29.45 11.4C27.876 11.4 26.6 10.124 26.6 8.55C26.6 6.97599 27.876 5.7 29.45 5.7C31.024 5.7 32.3 6.97599 32.3 8.55Z" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19 28.5C24.2467 28.5 28.5 24.2467 28.5 19C28.5 13.7533 24.2467 9.5 19 9.5C13.7533 9.5 9.5 13.7533 9.5 19C9.5 24.2467 13.7533 28.5 19 28.5ZM19 24.7C22.148 24.7 24.7 22.148 24.7 19C24.7 15.852 22.148 13.3 19 13.3C15.852 13.3 13.3 15.852 13.3 19C13.3 22.148 15.852 24.7 19 24.7Z" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 18.24C0 11.8554 0 8.6631 1.24253 6.22451C2.33548 4.07946 4.07946 2.33548 6.22451 1.24253C8.6631 0 11.8554 0 18.24 0H19.76C26.1446 0 29.3369 0 31.7755 1.24253C33.9205 2.33548 35.6645 4.07946 36.7575 6.22451C38 8.6631 38 11.8554 38 18.24V19.76C38 26.1446 38 29.3369 36.7575 31.7755C35.6645 33.9205 33.9205 35.6645 31.7755 36.7575C29.3369 38 26.1446 38 19.76 38H18.24C11.8554 38 8.6631 38 6.22451 36.7575C4.07946 35.6645 2.33548 33.9205 1.24253 31.7755C0 29.3369 0 26.1446 0 19.76V18.24ZM18.24 3.8H19.76C23.015 3.8 25.2277 3.80296 26.9381 3.9427C28.604 4.07881 29.456 4.32553 30.0503 4.62835C31.4804 5.35699 32.643 6.51964 33.3716 7.94967C33.6745 8.54399 33.9212 9.39596 34.0573 11.0619C34.197 12.7723 34.2 14.985 34.2 18.24V19.76C34.2 23.015 34.197 25.2277 34.0573 26.9381C33.9212 28.604 33.6745 29.456 33.3716 30.0503C32.643 31.4804 31.4804 32.643 30.0503 33.3716C29.456 33.6745 28.604 33.9212 26.9381 34.0573C25.2277 34.197 23.015 34.2 19.76 34.2H18.24C14.985 34.2 12.7723 34.197 11.0619 34.0573C9.39596 33.9212 8.54399 33.6745 7.94967 33.3716C6.51964 32.643 5.35699 31.4804 4.62835 30.0503C4.32553 29.456 4.07881 28.604 3.9427 26.9381C3.80296 25.2277 3.8 23.015 3.8 19.76V18.24C3.8 14.985 3.80296 12.7723 3.9427 11.0619C4.07881 9.39596 4.32553 8.54399 4.62835 7.94967C5.35699 6.51964 6.51964 5.35699 7.94967 4.62835C8.54399 4.32553 9.39596 4.07881 11.0619 3.9427C12.7723 3.80296 14.985 3.8 18.24 3.8Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div> -->
+    <div class="company-team__blocks">
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic1.png" alt=""></div>
+            <div class="company-team__blocks--name">МИХАИЛ ШРАЙБМАН</div>
+            <div class="company-team__blocks--position">CEO</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic2.png" alt=""></div>
+            <div class="company-team__blocks--name">ДЕНИС НАГАЕВ</div>
+            <div class="company-team__blocks--position">CTO</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic3.png" alt=""></div>
+            <div class="company-team__blocks--name">Владислав Кольца</div>
+            <div class="company-team__blocks--position">Project-manager</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic4.png" alt=""></div>
+            <div class="company-team__blocks--name">Сергей Шишкин</div>
+            <div class="company-team__blocks--position">Project-manager</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic5.png" alt=""></div>
+            <div class="company-team__blocks--name">МИХАИЛ ФИЛИППОВ</div>
+            <div class="company-team__blocks--position">Project-manager</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic6.png" alt=""></div>
+            <div class="company-team__blocks--name">Дмитрий Миронов</div>
+            <div class="company-team__blocks--position">Project-manager</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic7.png" alt=""></div>
+            <div class="company-team__blocks--name">СЕРГЕЙ ИВАНОВ</div>
+            <div class="company-team__blocks--position">Team-lead</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic8.png" alt=""></div>
+            <div class="company-team__blocks--name">Дмитрий Воробьев</div>
+            <div class="company-team__blocks--position">Руководитель отдела тестирования</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic9.png" alt=""></div>
+            <div class="company-team__blocks--name">БОГДАН ФЕРАПОНТОВ</div>
+            <div class="company-team__blocks--position">Арт-директор</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic10.png" alt=""></div>
+            <div class="company-team__blocks--name">Руслан Гарапов</div>
+            <div class="company-team__blocks--position">Front-end developer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic11.png" alt=""></div>
+            <div class="company-team__blocks--name">Сергей Гончаров</div>
+            <div class="company-team__blocks--position">Front-end developer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic12.png" alt=""></div>
+            <div class="company-team__blocks--name">ВЛАДИМИР КОМАРОВСКИЙ</div>
+            <div class="company-team__blocks--position">Front-end developer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic13.png" alt=""></div>
+            <div class="company-team__blocks--name">НИКОЛАЙ ЯЩЕНКО</div>
+            <div class="company-team__blocks--position">Back-end developer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic14.png" alt=""></div>
+            <div class="company-team__blocks--name">Александр Горшков</div>
+            <div class="company-team__blocks--position">Back-end developer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic15.png" alt=""></div>
+            <div class="company-team__blocks--name">Алексей Волжин</div>
+            <div class="company-team__blocks--position">Back-end разработчик</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic16.png" alt=""></div>
+            <div class="company-team__blocks--name">РОМАН ПЕТРОВ</div>
+            <div class="company-team__blocks--position">SEO оптимизатор</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic17.png" alt=""></div>
+            <div class="company-team__blocks--name">АРТЁМ СИГАЧЁВ</div>
+            <div class="company-team__blocks--position">Контент-менеджер</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic18.png" alt=""></div>
+            <div class="company-team__blocks--name">АНДРЕЙ ТРУФАНОВ</div>
+            <div class="company-team__blocks--position">Web-designer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic19.png" alt=""></div>
+            <div class="company-team__blocks--name">Никита Щеглов</div>
+            <div class="company-team__blocks--position">Web-designer</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic20.png" alt=""></div>
+            <div class="company-team__blocks--name">СЕРГЕЙ КУКЛИН</div>
+            <div class="company-team__blocks--position">Копирайтер</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic21.png" alt=""></div>
+            <div class="company-team__blocks--name">АНДРЕЙ ФЕТИСОВ</div>
+            <div class="company-team__blocks--position">Таргетолог</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic22.png" alt=""></div>
+            <div class="company-team__blocks--name">Константин Суворов</div>
+            <div class="company-team__blocks--position">Контекстолог</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic23.png" alt=""></div>
+            <div class="company-team__blocks--name">СЕРГЕЙ НАРТОВ</div>
+            <div class="company-team__blocks--position">Web-аналитик</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic24.png" alt=""></div>
+            <div class="company-team__blocks--name">Денис бондаренко</div>
+            <div class="company-team__blocks--position">Специалист контроля качества</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic25.png" alt=""></div>
+            <div class="company-team__blocks--name">АЛЕКСЕЙ ЛЕЛЯКИН</div>
+            <div class="company-team__blocks--position">Web-интегратор</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic26.png" alt=""></div>
+            <div class="company-team__blocks--name">НИКОЛАЙ ИВАЩЕНКО</div>
+            <div class="company-team__blocks--position">SMM специалист</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic27.png" alt=""></div>
+            <div class="company-team__blocks--name">АЛЕКСАНДР ЗУБКОВ</div>
+            <div class="company-team__blocks--position">Специалист по маркетплейсам</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic28.png" alt=""></div>
+            <div class="company-team__blocks--name">Владислав Парасий</div>
+            <div class="company-team__blocks--position">Account-manager</div>
+        </div>
+        <div class="company-team__blocks--item">
+            <div class="company-team__blocks--image"><img src="../local/img/pic/pic29.png" alt=""></div>
+            <div class="company-team__blocks--name">Максим Аманов </div>
+            <div class="company-team__blocks--position">HR-manager</div>
+        </div>
+    </div>
+</section>

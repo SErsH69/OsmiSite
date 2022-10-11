@@ -1,0 +1,10 @@
+.job-first {
+    margin-bottom: vw(0);
+    margin-top: vw(-320);
+    // display: none !important;
+    position: relative;
+    z-index: 10;
+    &-tentacle {
+        padding-right: vw(704);
+    }
+}

@@ -1,0 +1,39 @@
+.call-to-action {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  &:not(.mobile) {
+    padding: 0 vw(52) vw(129) vw(286) !important;
+  }
+  &.mobile {
+    padding: 0 0 89px 0;
+  }
+  &-left {
+    width: vw(814);
+  }
+  &:not(.mobile) &-right {
+    width: calc(100% - #{vw(814)});
+  }
+  &.mobile &-right {
+    width: 100%;
+    text-align: center;
+  }
+  &-text {
+    font-weight: 700;
+    @extend %white;
+  }
+  &:not(.mobile) &-text {
+    font-size: vw(30);
+    line-height: 140%;
+    margin-bottom: vw(82);
+  }
+  &.mobile &-text {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  &-button {
+    width: vw(327);
+  }
+}

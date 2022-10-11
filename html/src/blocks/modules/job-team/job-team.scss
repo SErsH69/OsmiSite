@@ -1,0 +1,31 @@
+.job-team {
+    padding: vw(80) vw(50) vw(115);
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    &-circle {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        transform: translateX(50%) translateY(50%);
+        background: #fff;
+        border-radius: 50%;
+    }
+    &-title {
+        color: #fff !important;
+        text-transform: uppercase;
+        
+        margin-bottom: vw(160);
+        &:not(.colorChanged) {
+            mix-blend-mode: difference;
+        }
+        &.colorChanged {
+            color: $bgColor;
+        }
+    }
+    &-map {
+        position: relative;
+    }
+}

@@ -1,0 +1,13 @@
+<section class="career-first block_caseg" :class="{'mobile': window.width <=1023}">
+    <h2 class="case_frst__title">Кейс</h2>
+    <h1 class="case_frst__subtitle">@@text</h1>
+    <div class="car_button" v-if="window.width <=1023">
+        <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти на сайт</div></button>
+    </div>
+        <div class="career-first-info" v-if="window.width > 1023">
+            <button class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти на сайт</div></button>
+            @@if (isInfoHidden !== true) {
+                <div><img src="./img/log_a.png" alt=""></div>
+            }
+        </div>
+</section>

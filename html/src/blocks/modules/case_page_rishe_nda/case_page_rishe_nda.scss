@@ -1,0 +1,85 @@
+.rishe {
+    .case_page__bls--l {
+        padding: 0;
+        background: none;
+    }
+    .case_frst__subtitle {
+        max-width: 100%;
+    }
+    .case_page__ref {
+        &--tit {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: vw(25);
+            line-height: 160%;
+            color: #121423;
+            margin-top: vw(40);
+        }
+        &--subtitle {
+            margin-top: vw(80);
+        }
+        &--txt {
+            font-family: 'Montserrat', serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: vw(25);
+            line-height: 160%;
+            color: #4F4F4F;
+        }
+        &--style_l {
+            font-weight: 700;
+        }
+        &--style_b {
+            color: #000;
+            font-weight: 700;
+        }
+        &--img {
+            margin-top: vw(80);
+            background: #EAEAEA;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: vw(87) vw(20);
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 0;
+            img {
+                max-width: 445px;
+                width: 100%;
+                border-radius: 20px;
+                width: 100%;
+            }
+        }
+    }
+}
+@media all and (max-width: 1023px) {
+    .rishe {
+        .case_page__in.mobile .case_page__bls--l {
+            padding: 0;
+            margin-top: 20px;
+        }
+        .case_page__ref {
+            &--tit {
+                margin-top: 30px;
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+            &--txt {
+                font-size: 14px;
+            }
+            &--img {
+                margin-left: 20px;
+                margin-right: 20px;
+                padding: 60px 45px !important;
+                margin-top: 40px;
+                margin-bottom: 80px !important;
+                img {
+                    max-width: 445px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

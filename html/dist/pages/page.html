@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>New Page</title>
+        <meta name="theme-color" content="#c9e0e04d">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
+    <div class="header-blur"></div>
+    <div class="header-in">
+        <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
+            <img src="img/logo.png" width="100%" height="100%" alt="">
+        </a>
+        <ul class="header__phones_mobile" v-if="window.width <= 1023">
+            <li class="header-phone_opener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+                    <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="header-phone_modal" :class="{ 'isOpened': header.isPhonesOpened }">
+                    <div class="header-phone_modal_in">
+                        <div class="header-phone_modal_closer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="#fff"></path></svg>
+                        </div>
+                        <div class="header-phone_modal_phones">
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                            <div class="delim"></div>
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1023">
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+        </ul>
+        
+        <nav class="header-menu" v-if="window.width > 1023">
+            <ul>
+                <li class="isActive" @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="company.html">О компании</a></li>
+                <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li> -->
+                <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Отзывы</a></li> -->
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="contacts.html">Контакты</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="career.html">Карьера</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="vacancies.html">Вакансии</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="blog.html">Блог</a></li>
+            </ul>
+            <div class="header-menu-border"></div>
+            <div class="header-menu-wave">
+                <svg width="100%" height="100%" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 11V11C1.85178 11 3.54446 9.95326 4.37176 8.29656L6.91016 3.21324C8.16237 0.705607 11.758 0.75631 12.939 3.29826L15.0498 7.84153C15.9448 9.76782 17.876 11 20 11V11" stroke="#E54A72" stroke-width="2"/>
+                </svg>                    
+            </div>
+        </nav>
+        <ul class="header-lang" v-if="window.width > 1023">
+            <li class="header-phone_opener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+                    <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="header-phone_modal" :class="{ 'isOpened': header.isPhonesOpened }">
+                    <div class="header-phone_modal_in">
+                        <div class="header-phone_modal_closer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="#fff"></path></svg>
+                        </div>
+                        <div class="header-phone_modal_phones">
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                            <div class="delim"></div>
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="active"><a href="#">Ru</a></li>
+            <li class="header-lang__delim">/</li>
+            <li><a href="#">En</a></li>
+        </ul>
+    </div>
+    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1023">
+        <ul>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="company.html">О компании</a></li>
+            <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li> -->
+            <li class="isActive" @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Отзывы</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="contacts.html">Контакты</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="career.html">Карьера</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="vacancies.html">Вакансии</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="blog.html">Блог</a></li>
+        </ul>
+    </nav>
+    
+</header>
+        <h1>New Page</h1>
+        <footer class="footer" :class="{'mobile': window.width <=1023}">
+    <div class="footer-tentacle">
+        <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
+    </div>
+    <div class="footer-in">
+        <nav class="footer-menu footer-menu-first">
+            <ul>
+                <li class="footer-menu-title">
+                    <a href="#">Услуги</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Канал продаж</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Контекстная реклама</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Интернет-SEO продвижение</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Управление репутацией</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="footer-menu footer-menu-second">
+            <ul>
+                <li class="footer-menu-title">
+                    <a href="#">О нас</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Компания</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Команда</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Контакты</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Новости</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="footer-menu footer-menu-third">
+            <ul>
+                <li class="footer-menu-title">
+                    <a href="#">Клиентам</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Отзывы</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Портфолио</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Услуги</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer-phones">
+            <a href="tel:+7 (495) 278-07-08 " class="footer-phone">+7 (495) 278-07-08 </a>
+            <a href="tel:+7 (495) 278-07-08 " class="footer-phone">+7 (495) 278-07-08 </a>
+        </div>
+        <div class="footer-info footer-address">
+            <div class="icon">
+                <img src="img/svg/address.svg" height="100%" width="100%" alt="">
+            </div>
+            <div class="text">Москва, БЦ Серпуховской Двор 2-й Рощинский проезд, дом 8</div>
+        </div>
+        <div class="footer-info footer-presentation">
+            <div class="icon">
+                <img src="img/svg/presentation.svg" height="100%" width="100%" alt="">
+            </div>
+            <a href="#" class="text">Презентация о компании</a>
+        </div>
+        <div class="footer-info footer-bank">
+            <div class="copy" title="Скопировать">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#FF4978" height="100%" viewBox="-21 0 512 512" width="100%"><path d="m325.332031 512h-266.664062c-32.363281 0-58.667969-26.304688-58.667969-58.667969v-288c0-32.363281 26.304688-58.664062 58.667969-58.664062h10.664062c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16h-10.664062c-14.699219 0-26.667969 11.964843-26.667969 26.664062v288c0 14.699219 11.96875 26.667969 26.667969 26.667969h266.664062c14.699219 0 26.667969-11.96875 26.667969-26.667969v-10.664062c0-8.832031 7.167969-16 16-16s16 7.167969 16 16v10.664062c0 32.363281-26.304688 58.667969-58.667969 58.667969zm0 0"/><path d="m410.667969 384h-224c-32.363281 0-58.667969-26.304688-58.667969-58.667969v-266.664062c0-32.363281 26.304688-58.667969 58.667969-58.667969h224c32.363281 0 58.664062 26.304688 58.664062 58.667969v266.664062c0 32.363281-26.300781 58.667969-58.664062 58.667969zm-224-352c-14.699219 0-26.667969 11.96875-26.667969 26.667969v266.664062c0 14.699219 11.96875 26.667969 26.667969 26.667969h224c14.699219 0 26.664062-11.96875 26.664062-26.667969v-266.664062c0-14.699219-11.964843-26.667969-26.664062-26.667969zm0 0"/></svg>
+            </div>
+            <div class="icon">
+                <img src="img/svg/bank.svg" height="100%" width="100%" alt="">
+            </div>
+            <div class="text">
+                <div>ИНН/КПП: 6317139806/631701001</div>
+                <div>Банк: АО "Тинькофф Банк"</div>
+                <div>БИК: 044525974</div>
+                <div>Р/С: 40702810010000559615</div>
+                <div>К/С: 30101810145250000974</div>
+            </div>
+        </div>
+        <div class="footer-info footer-bookkeeping">
+            <div class="icon">
+                <img src="img/svg/bookkeeping.svg" height="100%" width="100%" alt="">
+            </div>
+            <div class="text">
+                <div>Бухгалтерия:</div>
+                <a href="mailto:buhgalter@myosminozhka.ru">buhgalter@myosminozhka.ru</a>
+            </div>
+        </div>
+        <div class="footer-info footer-email">
+            <div class="icon"></div>
+            <div class="text">
+                <a href="mailto:info@myosminozhka.ru">
+                    info@myosminozhka.ru
+                </a>
+            </div>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="footer-social">
+                <svg width="100%" height="100%" viewBox="0 0 102 102" fill="#FF4978" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M41.273 31.0624C34.9202 31.0624 29.7684 36.2142 29.7684 42.5671V60.9744C29.7684 67.3273 34.9202 72.4791 41.273 72.4791H59.6804C66.0333 72.4791 71.1851 67.3273 71.1851 60.9744V42.5671C71.1851 36.2142 66.0333 31.0624 59.6804 31.0624H41.273ZM64.2823 35.6643C65.5524 35.6643 66.5832 36.6951 66.5832 37.9652C66.5832 39.2353 65.5524 40.2661 64.2823 40.2661C63.0122 40.2661 61.9814 39.2353 61.9814 37.9652C61.9814 36.6951 63.0122 35.6643 64.2823 35.6643ZM50.4767 40.2661C56.8296 40.2661 61.9814 45.4179 61.9814 51.7707C61.9814 58.1236 56.8296 63.2754 50.4767 63.2754C44.1239 63.2754 38.9721 58.1236 38.9721 51.7707C38.9721 45.4179 44.1239 40.2661 50.4767 40.2661ZM50.4767 44.868C48.646 44.868 46.8903 45.5952 45.5957 46.8898C44.3012 48.1843 43.574 49.94 43.574 51.7707C43.574 53.6015 44.3012 55.3572 45.5957 56.6517C46.8903 57.9463 48.646 58.6735 50.4767 58.6735C52.3075 58.6735 54.0632 57.9463 55.3577 56.6517C56.6523 55.3572 57.3795 53.6015 57.3795 51.7707C57.3795 49.94 56.6523 48.1843 55.3577 46.8898C54.0632 45.5952 52.3075 44.868 50.4767 44.868Z"/>
+                </svg>                    
+            </a>
+            <a href="#" class="footer-social">
+                <svg width="100%" height="100%" viewBox="0 0 102 103" fill="#FF4978" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60.8305 38.6669L57.0769 38.6686C54.1339 38.6686 53.5641 40.1213 53.5641 42.2531V46.9535H60.5831L60.5806 54.316H53.5641V73.2087H46.2431V54.316H40.1226V46.9535H46.2431V41.5244C46.2431 35.2232 49.949 31.7921 55.3609 31.7921L60.8309 31.8011L60.8305 38.6669Z"/>
+                </svg>
+            </a>
+            <a href="#" class="footer-social">
+                <svg width="100%" height="100%" viewBox="0 0 102 103" fill="#FE5A84" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M67.04 62.16C66.47 60.4 68.62 57.19 64.38 56.71C63.34 56.59 63.37 54.98 63.93 54.16C65.08 52.45 66.96 53.4 68.52 53.24C70.1 53.08 71 53.78 70.98 55.52C70.94 58.51 70.84 61.51 71.03 64.48C71.17 66.72 69.82 69.56 73.24 70.8C74.02 71.08 74.05 72.4 73.56 73.02C72.33 74.6 70.02 74.43 69.07 73.62C67.27 72.09 66.29 72.72 64.58 73.58C59.61 76.06 54.71 73.24 54.09 67.66C53.82 65.2 54.07 62.68 53.96 60.2C53.92 59.14 54.52 57.61 53.03 57.2C51.47 56.76 50.52 56.05 51.12 54.47C51.94 52.3 53.96 53.41 55.47 53.25C57.09 53.08 57.9 53.93 57.88 55.62C57.85 58.77 57.88 61.93 57.89 65.08C57.9 67.87 58.13 70.86 61.75 70.84C65.27 70.82 67.02 68.45 67.04 64.91C67.05 64.08 67.04 63.25 67.04 62.16Z"/>
+                    <path d="M41.52 41.32C42.75 37.94 44.21 34.67 45.09 31.26C45.97 27.86 48.3 27.79 50.84 28.2C53.1 28.56 52.86 31.19 51.84 31.42C46.77 32.56 47.58 37.21 45.96 40.35C44.9 42.4 44.17 44.64 43.41 46.83C42.92 48.23 42.25 49.11 40.59 49.05C39.07 48.99 38.66 47.94 38.26 46.85C36.84 42.95 35.45 39.04 34.06 35.12C33.67 34.03 33.52 32.68 32.36 32.22C30.91 31.65 28.75 32.03 29.34 29.4C29.62 28.13 30.74 28.12 31.72 28.15C33.61 28.21 35.81 27.46 36.64 30.23C37.45 32.93 38.34 35.62 39.37 38.25C39.77 39.22 39.68 40.58 41.52 41.32Z"/>
+                    <path d="M38.43 73.93C37.27 73.93 36.1 74.05 34.96 73.9C33.62 73.73 31.78 74.73 31.12 72.71C30.56 71 31.98 70.67 33.14 69.94C34.49 69.08 34.82 58.12 33.47 57.24C32.06 56.32 29.91 55.83 31.5 53.86C32.66 52.44 35.93 52.58 36.49 53.53C38.32 56.65 39.82 54.58 41.56 53.88C45.79 52.16 47.49 53.2 47.1 57.22C47.01 58.16 47.26 59.32 45.97 59.66C44.94 59.94 44 59.8 43.57 58.61C42.54 55.74 41.02 57.24 39.92 58.39C36.87 61.56 37.79 65.6 38.34 69.24C38.62 71.11 41.21 70.03 42.74 70.32C44.2 70.59 46.54 69.49 46.63 72.07C46.73 74.75 44.36 73.78 42.9 73.92C41.42 74.04 39.92 73.93 38.43 73.93Z"/>
+                    <path d="M63.87 27.7C69.02 27.64 72.24 30.01 71.88 33.56C71.78 34.57 71.79 35.63 70.49 35.82C69.45 35.97 68.36 35.83 68.22 34.54C67.79 30.55 65.03 30.8 62.36 31.46C58.88 32.32 57.11 34.86 57.06 38.38C57.01 41.65 58.46 44.15 61.75 45.19C63.9 45.87 66.11 45.7 67.92 44.34C69.37 43.24 70.66 42.85 71.56 44.6C72.4 46.23 70.68 46.9 69.72 47.62C66.31 50.15 60.8 49.93 57.2 47C53.53 44.02 52.13 40.12 53.51 35.49C54.93 30.73 58.98 27.76 63.87 27.7Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+        <script src="js/pageB.js"></script>
+        <script src="js/vendor.js"></script>
+    </body>
+</html>

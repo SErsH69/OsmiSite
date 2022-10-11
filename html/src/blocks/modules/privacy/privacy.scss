@@ -1,0 +1,78 @@
+.privacy_page {
+    background: #fff;
+    @media all and (max-width: 1023px) {
+        background: $bgColor;
+    }
+}
+.privacy {
+    padding-top: vw(197);
+    padding-bottom: vw(250);
+    &:not(.mobile) {
+        background: url('../img/privacy_bg.png') 50% 0 / 100% no-repeat;
+    }
+    &.mobile {
+        padding-top: 110px;
+        padding-bottom: 0;
+    }
+    &__title {
+        color: #929292;
+        margin-bottom: vw(250);
+        font-weight: 600;
+    }
+    &.mobile &__title {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+    &__body {
+        padding: vw(20);
+    }
+    &.mobile &__body {
+        padding: 20px;
+    }
+    &__body-title {
+        font-weight: bold;
+        font-size: vw(80);
+        line-height: vw(80);
+        margin-bottom: vw(76);
+        color: #121423;
+    }
+    &.mobile &__body-title {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+    &__body-item {
+        &:not(:last-child) {
+            margin-bottom: vw(75);
+        }
+        .title {
+            font-weight: 600;
+            font-size: vw(50);
+            line-height: vw(50);
+            margin-bottom: vw(35);
+            color: #121423;
+        }
+        .text {
+            font-size: vw(30);
+            line-height: vw(50);
+            color: #121423;
+        }
+    }
+    &.mobile &__body-item {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+        .title {
+            color: #fff;
+            font-size: 24px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .text {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    }
+}

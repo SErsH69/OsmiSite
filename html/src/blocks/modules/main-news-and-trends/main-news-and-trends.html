@@ -1,0 +1,78 @@
+
+<section class="news-and-trends news-and-trends-right-slider" :class="{'mobile': window.width <=1023}">
+    <h1 class="news-and-trends-title">Новости и тренды</h1>
+    <div class="career-blog-buttons news-and-trends-buttons__wrap">
+        <div class="news-and-trends-buttons">
+            <button class="news-and-trends-button news-and-trends-button__main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-news="6"><span>Тренды</span></button>
+            <button class="news-and-trends-button news-and-trends-button__mint" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-news="7"><span>Новости</span></button>
+            <button class="news-and-trends-button news-and-trends-button__green" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave" data-news="all"><span>Тренды</span></button>
+        </div>
+        <div class="news-and-trends-arrows" data-glide-el="controls">
+            <div class="arrow prev" data-glide-dir="<">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423">
+                    <path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"/>
+                </svg>
+            </div>
+            <div class="arrow next" data-glide-dir=">">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 89 38" fill="#121423">
+                    <path d="M87.7678 20.7678C88.7441 19.7914 88.7441 18.2085 87.7678 17.2322L71.8579 1.32232C70.8816 0.346014 69.2986 0.346014 68.3223 1.32232C67.346 2.29864 67.346 3.88155 68.3223 4.85786L82.4645 19L68.3223 33.1421C67.346 34.1184 67.346 35.7014 68.3223 36.6777C69.2986 37.654 70.8816 37.654 71.8579 36.6777L87.7678 20.7678ZM2.18557e-07 21.5L86 21.5L86 16.5L-2.18557e-07 16.5L2.18557e-07 21.5Z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="news-and-trends-items">
+        <div class="news-and-trends-right">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        @@for (var i = 0; i < 5; i++) {
+                            <article data-id-news="6" class="news-and-trends-item news-and-trends-item-trend">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        }
+                        @@for (var i = 5; i < 7; i++) {
+                            <article data-id-news="7" class="news-and-trends-item news-and-trends-item-news">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        }
+                        @@for (var i = 7; i < 10; i++) {
+                            <article class="news-and-trends-item news-and-trends-item-green">
+                                <div class="news-and-trends-item_image">
+                                    <img src="img/main_news_image.png" alt="">
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="news-and-trends-more" v-if="false">
+                <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                    <div class="text">Показать еще</div>
+                </button>
+            </div>
+            <form action="#" class="news-and-trends-form">
+                <div class="news-and-trends-form__in">
+                    <div class="closer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none">
+                            <path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="title">Подпишись на наши рассылки</div>
+                    <div class="input">
+                        <input type="email" placeholder="E-mail:">
+                    </div>
+                    <button type="submit" class="button button--main button--main-border" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                        <div class="text">Подписаться</div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="news-and-trends-scroller" style="height: 100vh;" v-if="window.width > 1023"></div> -->
+</section>

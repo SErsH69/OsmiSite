@@ -1,0 +1,42 @@
+<section class="job-info" :class="{'mobile': window.width <=1023}">
+    <div class="job-info-left">
+        <div class="job-info-titles">
+            <div class="job-info-titles__in">
+                <h5 class="job-info-title isActive" data-item-id="0">Интернет-магазины</h5>
+                @@for (var i = 1; i < 6; i++) {
+                    <h5 class="job-info-title" data-item-id="`+ i +`">Интернет-магазины</h5>
+                }
+            </div>
+        </div>
+        <div class="job-info-button" v-if="window.width > 1023">
+            <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
+        </div>
+    </div>
+    <div class="job-info-right">
+        @@for (var i = 0; i < 6; i++) {
+            <li class="job-info-item" data-target-id="`+ i +`">
+                <div class="job-info-logos">
+                    <div class="job-info-logo">
+                        <img src="img/svg/bitrix.svg" height="100%" alt="">
+                    </div>
+                    <div class="job-info-logo">
+                        <img src="img/svg/1c.svg" height="100%" alt="">
+                    </div>
+                    <div class="job-info-logo">
+                        <img src="img/svg/bitrix.svg" height="100%" alt="">
+                    </div>
+                    <div class="job-info-logo">
+                        <img src="img/svg/1c.svg" height="100%" alt="">
+                    </div>
+                </div>
+                <div class="job-info-item-text">
+                    ` + i + `
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla mi eu egestas porttitor. In aliquet, libero eget pharetra fringilla, justo nulla tristique sem, vitae viverra nibh dolor ut arcu. Duis lobortis est diam, sed tempus lorem pulvinar a. Morbi iaculis mauris purus, sit amet tincidunt arcu pellentesque et. Nunc accumsan bibendum accumsan. Nullam non bibendum mauris. Praesent tempus varius elit, nec malesuada libero mattis nec. Cras hendrerit nunc at nulla sagittis fermentu.
+                </div>
+                <div class="job-info-button" v-if="window.width <= 1023">
+                    <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Перейти к кейсу</div></a>
+                </div>
+            </li>
+        }
+    </div>
+</section>

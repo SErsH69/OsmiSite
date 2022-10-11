@@ -1,0 +1,28 @@
+<section class="career-first" :class="{'mobile': window.width <=1023}">
+    <div class="career-first-date">09.06.2021</div>
+    <h1 class="career-first-title">@@text</h1>
+    <div class="career-first-tentacle" v-if="window.width <=1023"><img src="./img/svg/tentacle.svg" width="100%" alt=""></div>
+    <div class="career-first-text" v-if="window.width <=1023">
+        <div class="career-first-text-l">159</div>
+        <div class="career-first-text-r">
+            <p>#разработка</p>
+            <p>#разработка</p>
+            <p>#разработка</p>
+        </div>
+    </div>
+    @@if (isInfoHidden !== true) {
+        <div class="career-first-info" v-if="window.width > 1023">
+            <div class="career-first-tentacle">
+                <img src="./img/svg/tentacle.svg" width="100%" alt="">
+            </div>
+            <div class="career-first-text">
+                <div class="career-first-text-l">159</div>
+                <div class="career-first-text-r">
+                    <p>#разработка</p>
+                    <p>#разработка</p>
+                    <p>#разработка</p>
+                </div>
+            </div>
+        </div>
+    }
+</section>

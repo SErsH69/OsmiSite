@@ -1,0 +1,23 @@
+.malina {
+    background: url('../img/malina_bg.png') 50% 50%/cover no-repeat;
+}
+.malina__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: all .6s ease;
+    svg rect {
+        transition: .6s all .6s ease;
+    }
+}
+.malina:hover .malina__image {
+    transform: scale(50);
+}
+.malina:hover svg rect {
+    fill: transparent;
+}
+.malina.mobile svg {
+    opacity: 0;
+}

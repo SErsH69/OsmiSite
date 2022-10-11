@@ -1,0 +1,33 @@
+<div class="company-about__wrap">
+    <div class="company-about" :class="{'mobile': window.width <=1023}">
+        <div class="company-about-in">
+            <div class="company-about-title" v-if="window.width > 1023"></div>
+            <div class="company-about-title" v-if="window.width <= 1023">О нас</div>
+            <div class="company-about-tentacle" v-if="window.width <= 1023">
+                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+            </div>
+            @@for (var i = 0; i < 13; i++) {
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            }
+        </div>
+    </div>
+    <div class="company-about company-about__title" v-if="window.width > 1023">
+        <div class="company-about-in">
+            <div class="company-about-title">
+                О нас
+            </div>
+            <!-- <div class="company-about-tentacle" v-if="window.width <= 1023">
+                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+            </div>
+            @@for (var i = 0; i < 13; i++) {
+                <div class="company-about-image">
+                    <img src="img/main_news_image.png" width="100%" height="100%" alt="">
+                </div>
+            } -->
+        </div>
+    </div>
+</div>

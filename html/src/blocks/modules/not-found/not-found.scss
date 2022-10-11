@@ -1,0 +1,50 @@
+.not-found {
+    position: relative;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    &:not(.mobile) {
+        padding: vw(170) vw(100) vw(100);
+    }
+    &.mobile {
+        padding: 110px 20px 100px;
+        flex-direction: column;
+    }
+    &__left {
+        width: 100%;
+        max-width: vw(645);
+    }
+    &.mobile &__left {
+        margin-bottom: 40px;
+    }
+    &__right {
+        
+        .error {
+            font-weight: 800;
+            color: #fff;
+            text-align: center;
+        }
+        .text {
+            color: #fff;
+            text-align: center;
+        }
+    }
+    &:not(.mobile) &__right {
+        width: calc(100% - #{vw(645)});
+        .error {
+            font-size: vw(53);
+        }
+        .text {
+            font-size: vw(18);
+        }
+    }
+    &.mobile &__right {
+        .error {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        .text {
+            font-size: 20px;
+        }
+    }
+}

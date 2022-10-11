@@ -1,0 +1,10 @@
+<div class="call-to-action" :class="{'mobile': window.width <=1023}">
+    <div class="call-to-action-left" v-if="window.width > 1023"></div>
+    <div class="call-to-action-right">
+        <div class="call-to-action-text">для среднего и крупного бизнеса</div>
+        <div class="call-to-action-button modal_opener" v-if="window.width > 1023">
+            <!-- TODO сделать аномацию кнопки https://videinfra.com/ -->
+            <a href="#" class="button button--main" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave"><div class="text">Стать клиентом</div></a>
+        </div>
+    </div>
+</div>

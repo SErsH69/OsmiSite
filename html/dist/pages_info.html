@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Осьминожка-Вакансии</title>
+        <meta name="theme-color" content="#fff">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <div>
+            <div class="pages-info">
+    <div class="pages-info__in">
+        <h3 class="pages-info__title">Информация о страницах</h3>
+        <div class="pages-info__block">
+            <p style="color: red;">!!!!!!! Пути до файлов указаны относительно папки /html/src/, в папке /html/dist ничего не писать, оно утратится при сборке !!!!!!!</p>
+            <p>
+                Кастомный js: 
+            </p>
+            <code>
+                js/custom.js
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Кастомный scss: 
+            </p>
+            <code>
+                blocks/modules/custom/custom.scss
+            </code>
+            <p style="color: red;">!!!!!!! После внесения всех изменений нужно запустить npm run dev из папки /html , все изменения внесенные напрямую в папку /html/dist при этом будут утеряны !!!!!!!</p>
+        </div>
+        <h4 class="pages-info__subtitle">Главная страница</h3>
+        <h5 class="pages-info__blockname">Шапка</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.header.onInit = () => {/*тут код*/} // стреляет при загрузке<br />
+                app.header.headerInAnimationComplete = () => {/*тут код*/} // стреляет когда шапка закончила уменьшаться при скролле
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                app.header.isPhonesOpened = false; // (boolean) если true то открывается модальное окно с телефонами<br />
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Анимация точки</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.cursorAnimation.onInit = () => {/*тут код*/} // стреляет при загрузке анимации<br />
+                app.cursorAnimation.onAnimate = () => {/*тут код*/} // стреляет при движении мышью
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                app.cursorAnimation.params.count = 100; // (number) количество возможных кругов на экране <br />
+                app.cursorAnimation.params.colors = [
+                    '#FF4978',
+                    '#430A66',
+                ]; // (array) массив цветов для градиента <br />
+                app.cursorAnimation.params.radius = 40; // (number) радиус кругов <br />
+                app.cursorAnimation.params.speed = 1; // (number) скорость исчезновение кругов <br />
+                app.cursorAnimation.params.lifetime = 150; // (number) указано в ms, отсюда отнимается app.cursorAnimation.params.speed, при 0 круг исчезает <br />
+                app.cursorAnimation.params.element = 'cursor'; (string) id элемента canvas <br />
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Два слова</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.mainWords.onInit = () => {/*тут код*/} // стреляет при загрузке<br />
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                app.mainWords.x.position = 'left'; // (string) или 'right', добавляет активный класс соответствующему слову <br />
+                app.mainWords.delay = 1; // (number) указано в s, задержка пока слова начнут ваыезжать <br />
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Web разработка</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">О нас</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.mainAbout.onCircleAnimationEnd: () => {/*тут код*/} // стреляет когда круг дорисовывается до конца<br />
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Цилиндрическая карусель</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.mainCarousel.onCarouselChange: () => {/*тут код*/} // стреляет когда меняется элемент карусели<br />
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Новости и тренды</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.newsAndTrends.onInit: () => {/*тут код*/} // стреляет при загрузке<br />
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Кейсы</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                app.mainCases.onInit: () => {/*тут код*/} // стреляет при загрузке<br />
+                app.mainCases.onAnimationStart: () => {/*тут код*/} // стреляет в начале анимации<br />
+                app.mainCases.onAnimatonAnimationEndionStart: () => {/*тут код*/} // стреляет в начале конце<br />
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <h5 class="pages-info__blockname">Обратная связь</h3>
+        <div class="pages-info__block">
+            <p>
+                Функции:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+        <div class="pages-info__block">
+            <p>
+                Переменные:
+            </p>
+            <code>
+                Нет (Нет = захардкожено, можно сделать общедоступным если нужно);
+            </code>
+        </div>
+    </div>
+</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+<div class="main-words" :class="{'main-words__animated': mainWords.isAnimated, 'mobile': window.width <=1023}">
+    <div :class="`main-words-wrap main-words-wrap__${this.mainWords.x.position} ${window.width <=1023 ? 'mobile' : 'desktop'}`">
+        <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'left', 'main-words-item__loaded': isMounted}" style="--delay: 0s;">digital</div>
+        <div class="main-words-item" :class="{'main-words-item__active' : this.mainWords.x.position == 'right', 'main-words-item__loaded': isMounted}" style="--delay: 0.2s;">agency</div>
+    </div>
+</div>

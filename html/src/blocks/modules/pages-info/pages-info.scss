@@ -1,0 +1,31 @@
+.pages-info {
+    background: #fff;
+    &__in {
+        padding: vw(50);
+        p {
+            font-size: vw(20);
+            color: $bgColor;
+        }
+        code {
+            font-size: vw(20);
+            color: $bgColor;
+            font-family: monospace !important;
+        }
+    }
+    &__title {
+        color: $bgColor;
+        margin-bottom: vw(150);
+    }
+    &__subtitle {
+        color: $bgColor;
+        margin-bottom: vw(80);
+    }
+    &__blockname {
+        margin-bottom: vw(20);
+        font-size: vw(40);
+        color: $bgColor;
+    }
+    &__block {
+        margin-bottom: vw(40);
+    }
+}

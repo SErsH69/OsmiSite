@@ -1,0 +1,47 @@
+.main-resume {
+    &:not(.mobile) {
+        padding: 0 vw(50) vw(100);
+        position: relative;
+        z-index: 5;
+    }
+    &.mobile {
+        padding: 0 20px 50px;
+        .main-question-form {
+            position: relative;
+            z-index: 4;
+        }
+    }
+    &-title {
+        text-transform: uppercase;
+        margin-bottom: vw(40);
+        @extend %white;
+        margin-left: vw(-4);
+    }
+}
+.career .footer:not(.mobile) .footer-tentacle {
+    top: vw(-700) !important;
+}
+.hh_block {
+    max-width: 410px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    &__img {
+        flex: 0 0 83px;
+        margin-right: 40px;
+    }
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: vw(30);
+        line-height: 40px;
+    }
+    @media all and (max-width: 1023px) {
+        margin-bottom: 20px;
+        &__img {
+            flex: 0 0 60px;
+        }
+    }
+}

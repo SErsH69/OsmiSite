@@ -1,0 +1,25 @@
+<div class="block-item-top"  :class="{'mobile': window.width <=1023}">
+    <div class="block-item-top__main">
+        <div class="block-item-top__date">09.06.2021</div>
+        <div class="block-item-top__name">Мероприятие </div>
+    </div>
+    <div class="block-item-top__info">
+        <div class="block-item-top__info-left" v-if="window.width > 1024">
+            <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+            <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+        </div>
+        <div class="block-item-top__info-right">
+            <div class="block-item-top__info-right-views">
+                <div class="icon">
+                    <img src="img/svg/eye.svg" alt="">
+                </div>
+                <div class="count">159</div>
+            </div>
+            <div class="block-item-top__info-right-tags">
+                <a href="#" class="tag">#разработка</a>
+                <a href="#" class="tag">#разработка</a>
+                <a href="#" class="tag">#разработка</a>
+            </div>
+        </div>
+    </div>
+</div>

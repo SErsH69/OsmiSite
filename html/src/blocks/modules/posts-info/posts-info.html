@@ -1,0 +1,102 @@
+<div class="post_info">
+    <div class="posts-blog">
+        <div class="posts-blog_l">
+            <div class="posts-blog_l__photo"><img src="./img/fc1.png" alt=""></div>
+            <div class="posts-blog_l__info">
+                <div class="posts-blog_l__info--title">Иван Иванов</div>
+                <div class="posts-blog_l__info--work">разработчик</div>
+            </div>
+        </div>
+        <div class="posts-blog_r">
+            <a href="#" target="_blank" class="posts-blog_r--link">
+                <img src="./img/svg/inst.svg" alt="">
+            </a>
+            <a href="#" target="_blank" class="posts-blog_r--link">
+                <img src="./img/svg/fc.svg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="post_info__text light">
+    <p>Меня зовут Иван, я разработчик в фирме ОСЬМИНОЖКА. Через нас проходит много проектов и оценок, функционал там повторяется, поэтому я решил показать, как мы решаем типовые задачи, и поделиться этим с вами. Начнем мы с самого начала. Как правило, началом для приложений служит авторизация. Рассмотрим классический случай с вводом номера телефона и смской и остановимся подробнее на экране подтверждения смс.</p>
+
+    <p>Выглядит не очень сложно, но, если присмотреться, функционал экрана довольно большой, а именно:</p>
+
+    отправить код на сервер;<br>
+включить таймер повторной отправки + отобразить визуально;<br>
+после завершения таймера показать кнопку «отправить еще раз»;<br>
+отправить повторный запрос на получение кода;<br>
+отобразить все ошибки;<br>
+обработать успешное подтверждение кода.<br>
+Если попробовать разделить экран на UI и логику, получается примерно такое взаимодействие между логикой и интерфейсом.
+    </div>
+    <div class="post_info__tbl"><img src="./img/tbl.png" alt=""></div>
+    <div class="post_info__text">
+    <p> Можно, конечно, отправить всю логику про таймеры и isLoading на view слой, но мне больше нравится относить это к логике. Особенно учитывая то, что я большой поклонник MVVM+Rx (и буду это использовать в статье), это более чем уместно смотрится. Ну да ладно.</p>
+
+    <p>ViewModel в этом случае играет роль некоего «преобразователя» пользовательских действий: у нее есть input и output(видно на картинке выше).</p>
+
+    <p>Со стороны UI нам будут интересны следующие компоненты:</p>
+    </div>
+    <div class="post_info__code">
+        <div class="post_info__code--in">
+            final class ConfirmCodeViewController: BaseViewController { <br>
+            /// поле ввода кода private lazy var codeTextField = CodeTextField() <br>
+            /// лейбл для отображения ошибок private lazy var errorLabel = UILabel()
+        
+            <p>/// один лоадер для запросов на отправку кода и на повторный запрос кода private lazy var loader = UIActivityIndicatorView()</p>
+    
+            <p>/// лейбл с обратным отсчетом для повторной отправки кода private lazy var timerLabel = UILabel()</p>
+    
+            <p>/// кнопка повторной отправки кода private lazy var retryButton = UIButton(type: .system)</p>
+        
+            <p>/// это все будет в стеквью private lazy var stackView = UIStackView()}</p>
+               
+        </div>
+    </div>
+    <div class="post_info__text">
+        Можно, конечно, отправить всю логику про таймеры и isLoading на view слой, но мне больше нравится относить это к логике. Особенно учитывая то, что я большой поклонник MVVM+Rx (и буду это использовать в статье), это более чем уместно смотрится. Ну да ладно.
+
+       <p> ViewModel в этом случае играет роль некоего «преобразователя» пользовательских действий: у нее есть input и output(видно на картинке выше).</p>
+
+        Со стороны UI нам будут интересны следующие компоненты:
+    </div>
+    <div class="post_info__code">
+        <div class="post_info__code--in">
+            final class ConfirmCodeViewController: BaseViewController { <br>
+            /// поле ввода кода private lazy var codeTextField = CodeTextField() <br>
+            /// лейбл для отображения ошибок private lazy var errorLabel = UILabel()
+        
+            <p>/// один лоадер для запросов на отправку кода и на повторный запрос кода private lazy var loader = UIActivityIndicatorView()</p>
+    
+            <p>/// лейбл с обратным отсчетом для повторной отправки кода private lazy var timerLabel = UILabel()</p>
+    
+            <p>/// кнопка повторной отправки кода private lazy var retryButton = UIButton(type: .system)</p>
+        
+            <p>/// это все будет в стеквью private lazy var stackView = UIStackView()}</p>
+               
+        </div>
+    </div>
+    <div class="post_info__text">
+        Можно, конечно, отправить всю логику про таймеры и isLoading на view слой, но мне больше нравится относить это к логике. Особенно учитывая то, что я большой поклонник MVVM+Rx (и буду это использовать в статье), это более чем уместно смотрится. Ну да ладно.
+
+       <p> ViewModel в этом случае играет роль некоего «преобразователя» пользовательских действий: у нее есть input и output(видно на картинке выше).</p>
+
+        Со стороны UI нам будут интересны следующие компоненты:
+    </div>
+    <div class="post_info__code">
+        <div class="post_info__code--in">
+            final class ConfirmCodeViewController: BaseViewController { <br>
+            /// поле ввода кода private lazy var codeTextField = CodeTextField() <br>
+            /// лейбл для отображения ошибок private lazy var errorLabel = UILabel()
+        
+            <p>/// один лоадер для запросов на отправку кода и на повторный запрос кода private lazy var loader = UIActivityIndicatorView()</p>
+    
+            <p>/// лейбл с обратным отсчетом для повторной отправки кода private lazy var timerLabel = UILabel()</p>
+    
+            <p>/// кнопка повторной отправки кода private lazy var retryButton = UIButton(type: .system)</p>
+        
+            <p>/// это все будет в стеквью private lazy var stackView = UIStackView()}</p>
+               
+        </div>
+    </div>
+</div>

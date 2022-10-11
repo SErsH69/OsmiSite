@@ -1,0 +1,46 @@
+.absolut {
+    .case_frst {
+        &__subtitle {
+            max-width: 100%;
+            span {
+                font-size: vw(30);
+                display: block;
+            }
+        }
+    }
+    .full_img {
+        margin-bottom: 30px;
+    }
+    .case_tabs_new {
+        margin-bottom: vw(70);
+    }
+    .case_page__in {
+        .company-video {
+            filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+            border-radius: vw(20);
+            border: vw(10) solid #FFFFFF;
+            overflow: hidden;
+        }
+    }
+    @media all and (max-width: 1023px) {
+        .case_frst {
+            &__subtitle {
+                span {
+                    font-size: 18px;
+                    margin-top: 20px;
+                    line-height: 140%;
+                }
+            }
+        }
+        .full_img {
+            max-width: 90px;
+        }
+        .case_page__in {
+            .company-video {
+                filter: drop-shadow(0px 13px 60px rgba(0, 0, 0, 0.1));
+                border: 0;
+                border-radius: 0;
+            }
+        }
+    }
+}

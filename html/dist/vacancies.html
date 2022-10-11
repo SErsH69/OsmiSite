@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Осьминожка-Вакансии</title>
+        <meta name="theme-color" content="#fff">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+        <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+        <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+        <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body class="vacan">
+        <div class="wrapper" id="app">
+            <div class="first__fullscreen_frame" :class="{ 'mobile': window.width <= 1023 }">
+                <header class="header" :class="{'isOpened': header.isOpened, 'mobile': window.width <=1023}">
+    <div class="header-blur"></div>
+    <div class="header-in">
+        <a href="/" class="header-logo" :class="{'mobile': window.width <=1023}">
+            <img src="img/logo.png" width="100%" height="100%" alt="">
+        </a>
+        <ul class="header__phones_mobile" v-if="window.width <= 1023">
+            <li class="header-phone_opener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+                    <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="header-phone_modal" :class="{ 'isOpened': header.isPhonesOpened }">
+                    <div class="header-phone_modal_in">
+                        <div class="header-phone_modal_closer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="#fff"></path></svg>
+                        </div>
+                        <div class="header-phone_modal_phones">
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                            <div class="delim"></div>
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="header-menu-opener" :class="{'isOpened': header.isOpened}" @click="header.openMobileHeader()" v-if="window.width <= 1023">
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+        </ul>
+        
+        <nav class="header-menu" v-if="window.width > 1023">
+            <ul>
+                <li class="isActive" @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="company.html">О компании</a></li>
+                <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li> -->
+                <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Отзывы</a></li> -->
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="contacts.html">Контакты</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="career.html">Карьера</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="vacancies.html">Вакансии</a></li>
+                <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="blog.html">Блог</a></li>
+            </ul>
+            <div class="header-menu-border"></div>
+            <div class="header-menu-wave">
+                <svg width="100%" height="100%" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 11V11C1.85178 11 3.54446 9.95326 4.37176 8.29656L6.91016 3.21324C8.16237 0.705607 11.758 0.75631 12.939 3.29826L15.0498 7.84153C15.9448 9.76782 17.876 11 20 11V11" stroke="#E54A72" stroke-width="2"/>
+                </svg>                    
+            </div>
+        </nav>
+        <ul class="header-lang" v-if="window.width > 1023">
+            <li class="header-phone_opener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none">
+                    <path d="M19.0264 20.9929C20.0722 21.0873 21.0036 20.2223 20.9994 19.1864V16.4767C21.0104 16.0337 20.8579 15.6021 20.5709 15.264C19.7615 14.3106 16.9855 13.7008 15.8851 13.935C15.0273 14.1176 14.4272 14.9788 13.8405 15.5644C12.6172 14.8702 11.5075 14.005 10.5426 13M8.41019 10.1448C8.9969 9.55929 9.85987 8.96036 10.0428 8.10428C10.2771 7.00777 9.66813 4.24949 8.72131 3.43684C8.38828 3.151 7.96247 2.99577 7.52325 3.00009H4.80811C3.77358 3.00106 2.91287 3.92895 3.00706 4.96919C3.00081 12.9038 8.48251 19.3497 15.9999 20.7226" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="header-phone_modal" :class="{ 'isOpened': header.isPhonesOpened }">
+                    <div class="header-phone_modal_in">
+                        <div class="header-phone_modal_closer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M7 6L12 1L11 0L6 5L1 0L0 1L5 6L0 11L1 12L6 7L11 12L12 11L7 6Z" fill="#fff"></path></svg>
+                        </div>
+                        <div class="header-phone_modal_phones">
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                            <div class="delim"></div>
+                            <a href="tel:+74952780708">+7 (495) 278-07-08</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="active"><a href="#">Ru</a></li>
+            <li class="header-lang__delim">/</li>
+            <li><a href="#">En</a></li>
+        </ul>
+    </div>
+    <nav class="header-mobile-menu" :class="{'isOpened': header.isOpened}" v-if="window.width <= 1023">
+        <ul>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="job.html">Услуги</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="cases.html">Портфолио</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="company.html">О компании</a></li>
+            <!-- <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Команда</a></li> -->
+            <li class="isActive" @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="#">Отзывы</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="contacts.html">Контакты</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="career.html">Карьера</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="vacancies.html">Вакансии</a></li>
+            <li @mouseenter="header.setHeaderWavePosition" @mouseleave="header.setHeaderWavePositionOnLoad"><a href="blog.html">Блог</a></li>
+        </ul>
+    </nav>
+    
+</header>
+                <section class="career-first" :class="{'mobile': window.width <=1023}">
+    <h1 class="career-first-title">Вакансии</h1>
+    <div class="career-first-tentacle" v-if="window.width <=1023">
+        <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+    </div>
+    <div class="career-first-text" v-if="window.width <=1023">
+        Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+    </div>
+    
+        <div class="career-first-info" v-if="window.width > 1023">
+            <div class="career-first-tentacle">
+                <img src="img/svg/tentacle_static.svg" width="100%" alt="" v-if="isSafary">
+        <img src="img/svg/tentacle.svg" width="100%" alt="" v-else>
+            </div>
+            <div class="career-first-text">
+                Настал тот самый момент, когда нам нужно еще больше свежих мозгов для самых смелых проектов
+            </div>
+        </div>
+    
+</section>
+            </div>
+            <section class="vacancies-tabs" :class="{'mobile': window.width <=1023}">
+    <div class="vacancies-tabs-items">
+        <div class="vacancies-tabs-item">
+            <div class="vacancies-tabs-item-title">
+                <div class="text">iOS разработчик</div>
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 55 33" fill="none">
+                        <path d="M2 31L27.5 3L53 31" stroke="#121423" stroke-width="4"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="vacancies-tabs-item-body">
+                <p>Сейчас мы в поиске iOS разработчика в штат.</p>
+                <p>Проект - Банковское приложение.</p>
+                <p>Приложение поделено на фичи, каждой фичей занимается своя команда. Речь идёт о таких продуктах, как страхование, путешествие, кредитование и тд.</p>
+                <p>Стек: Swift, Objective-С, CocoaPods, SwiftLint, Alamofire (или URLSession), Core Data, AVFoundation (AVPlayer), AVKit (AVPlayerViewController), WebKit, UIKit, XCTest.</p>
+                <div class="vacancies-tabs-item-body-fake"></div>
+                <p>Сейчас мы в поиске iOS разработчика в штат.</p>
+                <p>Проект - Банковское приложение.</p>
+                <p>Приложение поделено на фичи, каждой фичей занимается своя команда. Речь идёт о таких продуктах, как страхование, путешествие, кредитование и тд.</p>
+                <p>Стек: Swift, Objective-С, CocoaPods, SwiftLint, Alamofire (или URLSession), Core Data, AVFoundation (AVPlayer), AVKit (AVPlayerViewController), WebKit, UIKit, XCTest.</p>
+                <div class="vacancies-tabs-item-body-fake"></div>
+            </div>
+        </div>
+        
+            <div class="vacancies-tabs-item">
+                <div class="vacancies-tabs-item-title">
+                    <div class="text">iOS разработчик</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 55 33" fill="none">
+                            <path d="M2 31L27.5 3L53 31" stroke="#121423" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="vacancies-tabs-item-body">
+                    <p>Сейчас мы в поиске iOS разработчика в штат.</p>
+                    <p>Проект - Банковское приложение.</p>
+                    <p>Приложение поделено на фичи, каждой фичей занимается своя команда. Речь идёт о таких продуктах, как страхование, путешествие, кредитование и тд.</p>
+                    <p>Стек: Swift, Objective-С, CocoaPods, SwiftLint, Alamofire (или URLSession), Core Data, AVFoundation (AVPlayer), AVKit (AVPlayerViewController), WebKit, UIKit, XCTest.</p>
+                    <div class="vacancies-tabs-item-body-fake"></div>
+                </div>
+            </div>
+        
+            <div class="vacancies-tabs-item">
+                <div class="vacancies-tabs-item-title">
+                    <div class="text">iOS разработчик</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 55 33" fill="none">
+                            <path d="M2 31L27.5 3L53 31" stroke="#121423" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="vacancies-tabs-item-body">
+                    <p>Сейчас мы в поиске iOS разработчика в штат.</p>
+                    <p>Проект - Банковское приложение.</p>
+                    <p>Приложение поделено на фичи, каждой фичей занимается своя команда. Речь идёт о таких продуктах, как страхование, путешествие, кредитование и тд.</p>
+                    <p>Стек: Swift, Objective-С, CocoaPods, SwiftLint, Alamofire (или URLSession), Core Data, AVFoundation (AVPlayer), AVKit (AVPlayerViewController), WebKit, UIKit, XCTest.</p>
+                    <div class="vacancies-tabs-item-body-fake"></div>
+                </div>
+            </div>
+        
+            <div class="vacancies-tabs-item">
+                <div class="vacancies-tabs-item-title">
+                    <div class="text">iOS разработчик</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 55 33" fill="none">
+                            <path d="M2 31L27.5 3L53 31" stroke="#121423" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="vacancies-tabs-item-body">
+                    <p>Сейчас мы в поиске iOS разработчика в штат.</p>
+                    <p>Проект - Банковское приложение.</p>
+                    <p>Приложение поделено на фичи, каждой фичей занимается своя команда. Речь идёт о таких продуктах, как страхование, путешествие, кредитование и тд.</p>
+                    <p>Стек: Swift, Objective-С, CocoaPods, SwiftLint, Alamofire (или URLSession), Core Data, AVFoundation (AVPlayer), AVKit (AVPlayerViewController), WebKit, UIKit, XCTest.</p>
+                    <div class="vacancies-tabs-item-body-fake"></div>
+                </div>
+            </div>
+        
+            <div class="vacancies-tabs-item">
+                <div class="vacancies-tabs-item-title">
+                    <div class="text">iOS разработчик</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 55 33" fill="none">
+                            <path d="M2 31L27.5 3L53 31" stroke="#121423" stroke-width="4"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="vacancies-tabs-item-body">
+                    <p>Сейчас мы в поиске iOS разработчика в штат.</p>
+                    <p>Проект - Банковское приложение.</p>
+                    <p>Приложение поделено на фичи, каждой фичей занимается своя команда. Речь идёт о таких продуктах, как страхование, путешествие, кредитование и тд.</p>
+                    <p>Стек: Swift, Objective-С, CocoaPods, SwiftLint, Alamofire (или URLSession), Core Data, AVFoundation (AVPlayer), AVKit (AVPlayerViewController), WebKit, UIKit, XCTest.</p>
+                    <div class="vacancies-tabs-item-body-fake"></div>
+                </div>
+            </div>
+        
+    </div>
+</section>
+            <section class="main-resume main-question dropped fileLoaderFirst" :class="{'mobile': window.width <=1023}">
+    <h4 class="main-resume-title">Откликнуться на вакансию</h4>
+    <form action="#">
+        <div class="main-question-form">
+            <div class="main-question-inputs">
+                <input type="text" placeholder="Ваше имя">
+                <input type="text" placeholder="Специальность">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Расскажите о себе"></textarea>
+                <label class="main-question-form-item file">
+                    <input type="file">
+                    <span v-if="!mainQuestionFormFirst.hasFile">+ Прикрепить резюме</span>
+                    <span v-if="mainQuestionFormFirst.hasFile && mainQuestionFormFirst.file.name">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 26" fill="none">
+                                <path d="M18.1 8.57612C18.4228 8.57612 18.589 8.20323 18.3824 7.97037L18.4727 8.05909C18.8103 8.39089 19 8.84096 19 9.31025V22.7308C19 23.7079 18.1941 24.5 17.2 24.5H2.8C1.80589 24.5 1 23.7079 1 22.7308L1 3.26925C1 2.29204 1.80601 1.49989 2.8002 1.5L11.054 1.50089C11.5312 1.50094 11.9889 1.6873 12.3264 2.01898L12.409 2.10015C12.1717 1.90644 11.8 2.06966 11.8 2.38376M18.1 8.57612H13.6C12.6059 8.57612 11.8 7.784 11.8 6.80687V2.38376M18.1 8.57612C18.4321 8.57612 18.5984 8.18112 18.3636 7.95029L12.4364 2.12436C12.2015 1.89353 11.8 2.05732 11.8 2.38376" stroke="#FF4978" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="text">{{mainQuestionFormFirst.file.name}}</div>
+                    </span>
+                </label>
+                <a href="#" class="hh_block" v-if="window.width <= 1023" :class="{'mobile': window.width <=1023}">
+                    <div class="hh_block__img"><img src="img/svg/hh_svg.svg" alt=""></div>
+                    <div class="hh_block__text">Посмотреть <br> вакансии на hh</div>
+                </a>
+                <div class="main-question-form-item button">
+                    <button type="submit" class="button button--main"  @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+                        <div class="text">Отправить резюме</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <a href="#" class="hh_block" v-if="window.width > 1023">
+        <div class="hh_block__img"><img src="img/svg/hh_svg.svg" alt=""></div>
+        <div class="hh_block__text">Посмотреть <br> вакансии на hh</div>
+    </a>
+</section>
+            <footer class="footer" :class="{'mobile': window.width <=1023}">
+    <div class="footer-tentacle">
+        <img src="img/svg/footer_tentacle.svg" width="100%" alt="">
+    </div>
+    <div class="footer-in">
+        <nav class="footer-menu footer-menu-first">
+            <ul>
+                <li class="footer-menu-title">
+                    <a href="#">Услуги</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Канал продаж</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Контекстная реклама</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Интернет-SEO продвижение</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Управление репутацией</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="footer-menu footer-menu-second">
+            <ul>
+                <li class="footer-menu-title">
+                    <a href="#">О нас</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Компания</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Команда</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Контакты</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Новости</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="footer-menu footer-menu-third">
+            <ul>
+                <li class="footer-menu-title">
+                    <a href="#">Клиентам</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Отзывы</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Портфолио</a>
+                </li>
+                <li class="footer-menu-item">
+                    <a href="#">Услуги</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer-phones">
+            <a href="tel:+7 (495) 278-07-08 " class="footer-phone">+7 (495) 278-07-08 </a>
+            <a href="tel:+7 (495) 278-07-08 " class="footer-phone">+7 (495) 278-07-08 </a>
+        </div>
+        <div class="footer-info footer-address">
+            <div class="icon">
+                <img src="img/svg/address.svg" height="100%" width="100%" alt="">
+            </div>
+            <div class="text">Москва, БЦ Серпуховской Двор 2-й Рощинский проезд, дом 8</div>
+        </div>
+        <div class="footer-info footer-presentation">
+            <div class="icon">
+                <img src="img/svg/presentation.svg" height="100%" width="100%" alt="">
+            </div>
+            <a href="#" class="text">Презентация о компании</a>
+        </div>
+        <div class="footer-info footer-bank">
+            <div class="copy" title="Скопировать">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#FF4978" height="100%" viewBox="-21 0 512 512" width="100%"><path d="m325.332031 512h-266.664062c-32.363281 0-58.667969-26.304688-58.667969-58.667969v-288c0-32.363281 26.304688-58.664062 58.667969-58.664062h10.664062c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16h-10.664062c-14.699219 0-26.667969 11.964843-26.667969 26.664062v288c0 14.699219 11.96875 26.667969 26.667969 26.667969h266.664062c14.699219 0 26.667969-11.96875 26.667969-26.667969v-10.664062c0-8.832031 7.167969-16 16-16s16 7.167969 16 16v10.664062c0 32.363281-26.304688 58.667969-58.667969 58.667969zm0 0"/><path d="m410.667969 384h-224c-32.363281 0-58.667969-26.304688-58.667969-58.667969v-266.664062c0-32.363281 26.304688-58.667969 58.667969-58.667969h224c32.363281 0 58.664062 26.304688 58.664062 58.667969v266.664062c0 32.363281-26.300781 58.667969-58.664062 58.667969zm-224-352c-14.699219 0-26.667969 11.96875-26.667969 26.667969v266.664062c0 14.699219 11.96875 26.667969 26.667969 26.667969h224c14.699219 0 26.664062-11.96875 26.664062-26.667969v-266.664062c0-14.699219-11.964843-26.667969-26.664062-26.667969zm0 0"/></svg>
+            </div>
+            <div class="icon">
+                <img src="img/svg/bank.svg" height="100%" width="100%" alt="">
+            </div>
+            <div class="text">
+                <div>ИНН/КПП: 6317139806/631701001</div>
+                <div>Банк: АО "Тинькофф Банк"</div>
+                <div>БИК: 044525974</div>
+                <div>Р/С: 40702810010000559615</div>
+                <div>К/С: 30101810145250000974</div>
+            </div>
+        </div>
+        <div class="footer-info footer-bookkeeping">
+            <div class="icon">
+                <img src="img/svg/bookkeeping.svg" height="100%" width="100%" alt="">
+            </div>
+            <div class="text">
+                <div>Бухгалтерия:</div>
+                <a href="mailto:buhgalter@myosminozhka.ru">buhgalter@myosminozhka.ru</a>
+            </div>
+        </div>
+        <div class="footer-info footer-email">
+            <div class="icon"></div>
+            <div class="text">
+                <a href="mailto:info@myosminozhka.ru">
+                    info@myosminozhka.ru
+                </a>
+            </div>
+        </div>
+        <div class="footer-socials">
+            <a href="#" class="footer-social">
+                <svg width="100%" height="100%" viewBox="0 0 102 102" fill="#FF4978" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M41.273 31.0624C34.9202 31.0624 29.7684 36.2142 29.7684 42.5671V60.9744C29.7684 67.3273 34.9202 72.4791 41.273 72.4791H59.6804C66.0333 72.4791 71.1851 67.3273 71.1851 60.9744V42.5671C71.1851 36.2142 66.0333 31.0624 59.6804 31.0624H41.273ZM64.2823 35.6643C65.5524 35.6643 66.5832 36.6951 66.5832 37.9652C66.5832 39.2353 65.5524 40.2661 64.2823 40.2661C63.0122 40.2661 61.9814 39.2353 61.9814 37.9652C61.9814 36.6951 63.0122 35.6643 64.2823 35.6643ZM50.4767 40.2661C56.8296 40.2661 61.9814 45.4179 61.9814 51.7707C61.9814 58.1236 56.8296 63.2754 50.4767 63.2754C44.1239 63.2754 38.9721 58.1236 38.9721 51.7707C38.9721 45.4179 44.1239 40.2661 50.4767 40.2661ZM50.4767 44.868C48.646 44.868 46.8903 45.5952 45.5957 46.8898C44.3012 48.1843 43.574 49.94 43.574 51.7707C43.574 53.6015 44.3012 55.3572 45.5957 56.6517C46.8903 57.9463 48.646 58.6735 50.4767 58.6735C52.3075 58.6735 54.0632 57.9463 55.3577 56.6517C56.6523 55.3572 57.3795 53.6015 57.3795 51.7707C57.3795 49.94 56.6523 48.1843 55.3577 46.8898C54.0632 45.5952 52.3075 44.868 50.4767 44.868Z"/>
+                </svg>                    
+            </a>
+            <a href="#" class="footer-social">
+                <svg width="100%" height="100%" viewBox="0 0 102 103" fill="#FF4978" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60.8305 38.6669L57.0769 38.6686C54.1339 38.6686 53.5641 40.1213 53.5641 42.2531V46.9535H60.5831L60.5806 54.316H53.5641V73.2087H46.2431V54.316H40.1226V46.9535H46.2431V41.5244C46.2431 35.2232 49.949 31.7921 55.3609 31.7921L60.8309 31.8011L60.8305 38.6669Z"/>
+                </svg>
+            </a>
+            <a href="#" class="footer-social">
+                <svg width="100%" height="100%" viewBox="0 0 102 103" fill="#FE5A84" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M67.04 62.16C66.47 60.4 68.62 57.19 64.38 56.71C63.34 56.59 63.37 54.98 63.93 54.16C65.08 52.45 66.96 53.4 68.52 53.24C70.1 53.08 71 53.78 70.98 55.52C70.94 58.51 70.84 61.51 71.03 64.48C71.17 66.72 69.82 69.56 73.24 70.8C74.02 71.08 74.05 72.4 73.56 73.02C72.33 74.6 70.02 74.43 69.07 73.62C67.27 72.09 66.29 72.72 64.58 73.58C59.61 76.06 54.71 73.24 54.09 67.66C53.82 65.2 54.07 62.68 53.96 60.2C53.92 59.14 54.52 57.61 53.03 57.2C51.47 56.76 50.52 56.05 51.12 54.47C51.94 52.3 53.96 53.41 55.47 53.25C57.09 53.08 57.9 53.93 57.88 55.62C57.85 58.77 57.88 61.93 57.89 65.08C57.9 67.87 58.13 70.86 61.75 70.84C65.27 70.82 67.02 68.45 67.04 64.91C67.05 64.08 67.04 63.25 67.04 62.16Z"/>
+                    <path d="M41.52 41.32C42.75 37.94 44.21 34.67 45.09 31.26C45.97 27.86 48.3 27.79 50.84 28.2C53.1 28.56 52.86 31.19 51.84 31.42C46.77 32.56 47.58 37.21 45.96 40.35C44.9 42.4 44.17 44.64 43.41 46.83C42.92 48.23 42.25 49.11 40.59 49.05C39.07 48.99 38.66 47.94 38.26 46.85C36.84 42.95 35.45 39.04 34.06 35.12C33.67 34.03 33.52 32.68 32.36 32.22C30.91 31.65 28.75 32.03 29.34 29.4C29.62 28.13 30.74 28.12 31.72 28.15C33.61 28.21 35.81 27.46 36.64 30.23C37.45 32.93 38.34 35.62 39.37 38.25C39.77 39.22 39.68 40.58 41.52 41.32Z"/>
+                    <path d="M38.43 73.93C37.27 73.93 36.1 74.05 34.96 73.9C33.62 73.73 31.78 74.73 31.12 72.71C30.56 71 31.98 70.67 33.14 69.94C34.49 69.08 34.82 58.12 33.47 57.24C32.06 56.32 29.91 55.83 31.5 53.86C32.66 52.44 35.93 52.58 36.49 53.53C38.32 56.65 39.82 54.58 41.56 53.88C45.79 52.16 47.49 53.2 47.1 57.22C47.01 58.16 47.26 59.32 45.97 59.66C44.94 59.94 44 59.8 43.57 58.61C42.54 55.74 41.02 57.24 39.92 58.39C36.87 61.56 37.79 65.6 38.34 69.24C38.62 71.11 41.21 70.03 42.74 70.32C44.2 70.59 46.54 69.49 46.63 72.07C46.73 74.75 44.36 73.78 42.9 73.92C41.42 74.04 39.92 73.93 38.43 73.93Z"/>
+                    <path d="M63.87 27.7C69.02 27.64 72.24 30.01 71.88 33.56C71.78 34.57 71.79 35.63 70.49 35.82C69.45 35.97 68.36 35.83 68.22 34.54C67.79 30.55 65.03 30.8 62.36 31.46C58.88 32.32 57.11 34.86 57.06 38.38C57.01 41.65 58.46 44.15 61.75 45.19C63.9 45.87 66.11 45.7 67.92 44.34C69.37 43.24 70.66 42.85 71.56 44.6C72.4 46.23 70.68 46.9 69.72 47.62C66.31 50.15 60.8 49.93 57.2 47C53.53 44.02 52.13 40.12 53.51 35.49C54.93 30.73 58.98 27.76 63.87 27.7Z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</footer>
+            <div class="cookie-form" :class="{'mobile': window.width <= 1023}" v-if="!cookiesForm.isClosedOnce">
+    <div class="cookie-form__in">
+        <div class="cookie-form__message">Мы используем куки на всех своих сайтах, включая этот, потому что без кук вообще весь интернет работал бы через жопу</div>
+        <div class="cookie-form__button" @mouseenter="buttonMouseEnter" @mouseleave="buttonMouseLeave">
+            <span>Понятно</span>
+        </div>
+    </div>
+</div>
+            <div class="preloader" :class="{'isHidden': isPreloaderHidden, 'mobile': window.width <= 1023}">
+    <div class="preloader__in">
+        <div class="preloader__image">
+            <svg width="100%" height="100%" viewBox="0 0 94 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="94" height="109">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M84.0126 46.5004C84.5126 46.3004 85.1127 46.7004 85.3127 47.3004C85.5127 47.9004 85.3127 48.6004 84.9127 48.8004C84.4127 49.0004 83.8127 48.6004 83.6127 48.0004C83.3127 47.4004 83.5126 46.7004 84.0126 46.5004ZM81.9127 40.1004C82.5127 39.4004 83.8127 39.5004 84.6127 40.4004C85.5127 41.2004 85.7126 42.4004 85.0126 43.1004C84.4126 43.8004 83.1127 43.7004 82.3127 42.8004C81.4127 42.0004 81.2127 40.8004 81.9127 40.1004ZM78.4127 40.8004C77.6127 40.7004 77.0127 40.2004 77.1127 39.6004C77.2127 39.0004 77.8127 38.6004 78.6127 38.7004C79.4127 38.8004 80.0127 39.3004 79.9127 39.9004C79.8127 40.4004 79.1127 40.8004 78.4127 40.8004ZM86.7126 52.4004C87.1126 52.0004 87.6127 52.0004 87.8127 52.2004C88.1127 52.5004 88.0126 53.0004 87.7126 53.3004C87.3126 53.7004 86.8127 53.7004 86.6127 53.5004C86.3127 53.3004 86.3126 52.8004 86.7126 52.4004ZM87.9127 44.9004C88.5127 44.7004 89.1127 45.2004 89.3127 46.0004C89.5127 46.7004 89.2127 47.5004 88.6127 47.7004C88.0127 47.9004 87.4126 47.4004 87.2126 46.6004C87.0126 45.8004 87.3127 45.1004 87.9127 44.9004ZM63.1127 15.8004C64.8127 17.8004 65.6127 21.2004 64.3127 26.6004C64.1127 25.2004 63.2126 20.5004 62.2126 18.6004L63.1127 15.8004ZM58.7126 13.6004C54.6126 9.30036 47.9126 6.30036 37.9126 9.20036C37.9126 9.20036 44.2126 4.90036 51.7126 6.20036C55.1126 6.80036 58.2126 8.80036 60.5126 11.6004L58.7126 13.6004ZM51.1127 36.3004C55.4127 35.7004 61.1127 30.5004 61.1127 30.5004C61.0127 39.9004 52.9127 40.4004 51.1127 36.3004ZM50.9127 105C50.5127 104.9 50.3127 104.5 50.4127 104C50.5127 103.5 50.9126 103.2 51.2126 103.2C51.6126 103.3 51.8126 103.7 51.7126 104.2C51.7126 104.7 51.3127 105.1 50.9127 105ZM46.7126 98.2004C46.2126 98.8004 45.4126 98.9004 45.0126 98.5004C44.5126 98.1004 44.6127 97.3004 45.1127 96.7004C45.6127 96.1004 46.4126 96.0004 46.8126 96.4004C47.3126 96.8004 47.2126 97.6004 46.7126 98.2004ZM48.0126 102.4C47.6126 102.3 47.4126 101.8 47.5126 101.3C47.6126 100.8 48.0127 100.5 48.4127 100.6C48.8127 100.7 49.0127 101.2 48.9127 101.7C48.8127 102.1 48.4126 102.4 48.0126 102.4ZM44.1127 93.6004C43.2127 93.3004 42.8127 92.2004 43.2127 91.0004C43.6127 89.9004 44.6126 89.1004 45.5126 89.4004C46.4126 89.7004 46.8127 90.8004 46.4127 92.0004C45.9127 93.2004 44.9127 93.9004 44.1127 93.6004ZM44.1127 85.2004C44.3127 84.4004 44.9126 83.9004 45.5126 84.1004C46.1126 84.2004 46.4126 85.0004 46.2126 85.7004C46.0126 86.5004 45.4126 87.0004 44.8126 86.8004C44.2126 86.7004 43.9127 86.0004 44.1127 85.2004ZM35.1127 30.1004C35.1127 30.1004 40.7127 35.7004 45.1127 36.3004C43.2127 40.4004 35.7127 40.7004 35.1127 30.1004ZM65.9127 55.2004C67.0127 55.2004 67.8127 55.9004 67.8127 56.7004C67.8127 57.5004 66.9127 58.2004 65.9127 58.2004C64.8127 58.2004 64.0126 57.5004 64.0126 56.7004C64.0126 55.9004 64.9127 55.2004 65.9127 55.2004ZM68.3127 62.8004C68.9127 63.0004 69.3126 63.8004 69.0126 64.6004C68.8126 65.4004 68.1127 66.0004 67.4127 65.8004C66.8127 65.6004 66.4126 64.8004 66.7126 64.0004C66.9126 63.1004 67.6127 62.6004 68.3127 62.8004ZM69.7126 58.3004C70.3126 58.0004 71.1126 58.3004 71.5126 59.0004C71.9126 59.7004 71.9127 60.6004 71.3127 60.9004C70.7127 61.2004 69.9126 60.9004 69.5126 60.2004C69.0126 59.5004 69.1126 58.7004 69.7126 58.3004ZM29.0126 91.1004C28.7126 91.3004 28.2126 91.1004 27.9126 90.7004C27.7126 90.3004 27.7127 89.8004 28.1127 89.6004C28.4127 89.4004 28.9127 89.6004 29.2127 90.0004C29.4127 90.4004 29.3126 90.9004 29.0126 91.1004ZM26.9126 81.5004C26.7126 81.2004 26.9126 80.7004 27.3126 80.4004C27.7126 80.1004 28.2126 80.2004 28.4126 80.5004C28.6126 80.8004 28.4126 81.3004 28.0126 81.6004C27.6126 81.8004 27.1126 81.8004 26.9126 81.5004ZM26.3126 86.7004C25.6126 87.1004 24.7127 86.7004 24.2127 85.8004C23.7127 84.9004 23.9126 84.0004 24.5126 83.6004C25.2126 83.2004 26.1127 83.6004 26.6127 84.5004C27.2127 85.3004 27.0126 86.3004 26.3126 86.7004ZM23.2127 81.0004C22.6127 81.0004 22.1127 80.4004 22.1127 79.6004C22.1127 78.8004 22.6127 78.2004 23.2127 78.2004C23.8127 78.2004 24.3126 78.8004 24.3126 79.6004C24.3126 80.3004 23.8127 81.0004 23.2127 81.0004ZM26.5126 73.3004C26.9126 72.9004 27.4127 72.9004 27.6127 73.1004C27.9127 73.4004 27.8126 73.9004 27.5126 74.2004C27.1126 74.6004 26.6126 74.6004 26.4126 74.4004C26.0126 74.2004 26.1126 73.7004 26.5126 73.3004ZM14.0126 64.6004C13.8126 65.3004 13.3127 65.8004 12.7127 65.6004C12.2127 65.5004 11.9126 64.8004 12.0126 64.1004C12.2126 63.4004 12.7126 62.9004 13.3126 63.1004C13.8126 63.2004 14.1126 63.9004 14.0126 64.6004ZM8.11265 65.6004C7.01265 65.9004 5.81265 64.9004 5.41265 63.4004C5.11265 61.9004 5.71265 60.5004 6.91265 60.2004C8.01265 59.9004 9.21265 60.9004 9.61265 62.4004C9.91265 63.9004 9.21265 65.3004 8.11265 65.6004ZM6.11265 55.6004C6.41265 54.6004 7.21265 54.0004 7.91265 54.2004C8.61265 54.4004 9.01265 55.3004 8.81265 56.3004C8.51265 57.3004 7.71265 57.9004 7.01265 57.7004C6.21265 57.5004 5.81265 56.6004 6.11265 55.6004ZM90.9127 63.9004C92.2127 64.6004 91.3127 70.7004 86.6127 70.3004C81.7127 69.8004 84.2126 65.9004 88.2126 59.9004C98.1126 45.1004 84.8127 33.1004 73.9127 36.7004C70.8127 37.7004 66.6126 40.5004 63.7126 43.2004C77.5126 20.8004 68.0127 -0.0996426 47.9127 0.000357406C47.9127 0.000357406 47.8126 0.000357406 47.7126 0.000357406C47.6126 0.000357406 47.5126 0.000357406 47.5126 0.000357406C45.0126 0.100357 26.1127 1.80036 25.6127 23.0004C25.4127 31.2004 29.2126 36.3004 32.4126 43.5004C36.3126 52.2004 35.5127 61.7004 23.2127 60.2004C26.5127 59.6004 28.6126 58.4004 29.9126 56.9004C28.4126 56.8004 26.6126 55.7004 25.0126 53.6004C22.8126 50.7004 22.6127 49.5004 20.2127 48.2004C10.5127 42.7004 0.612652 52.4004 3.11265 63.0004C5.81265 74.6004 14.6126 75.6004 11.4126 82.1004C8.21265 88.6004 -2.18735 83.8004 2.91265 75.0004C-1.38735 78.6004 -0.187351 84.5004 1.81265 87.5004C4.81265 92.0004 14.6126 93.2004 18.8126 87.2004C16.0126 80.6004 12.9126 69.0004 24.8126 66.5004C38.9126 63.6004 34.7126 64.1004 37.5126 61.4004C35.7126 68.7004 26.0126 65.2004 22.0126 70.2004C17.5126 75.9004 20.6127 83.6004 20.7127 84.0004C22.3127 87.5004 25.3126 91.3004 30.0126 95.0004C31.4126 96.7004 32.7126 98.7004 32.3126 101.2C31.7126 104.9 25.8127 105 25.6127 100.1C25.1127 102.1 25.3127 105.9 29.6127 106.7C33.9127 107.6 39.9126 101.4 38.3126 95.2004C36.7126 88.9004 36.0127 88.3004 36.2127 84.6004C36.6127 77.6004 44.3126 73.8004 46.7126 73.7004C34.3126 80.8004 38.8126 108.9 58.0126 108.9C74.0126 108.9 73.0126 90.4004 63.5126 91.8004C57.5126 92.7004 57.6127 96.8004 57.6127 96.8004C57.6127 96.8004 60.4127 95.8004 62.6127 96.5004C66.1127 97.6004 66.7126 102.4 62.8126 104.4C58.1126 106.9 50.4126 102.4 56.3126 91.6004C56.8126 90.7004 57.5126 90.1004 58.2126 89.4004C56.0126 88.9004 52.8127 87.3004 51.9127 81.8004C50.8127 74.8004 55.1127 69.2004 52.4127 69.0004C54.3127 64.8004 60.2127 63.9004 57.6127 69.3004C56.7127 71.2004 47.5127 82.5004 59.1127 88.4004C68.2127 90.9004 82.2126 81.0004 83.0126 89.0004C82.4126 92.3004 78.8127 93.8004 77.1127 93.0004C78.2127 93.6004 81.9126 95.1004 85.0126 92.5004C91.6126 86.7004 87.5127 77.0004 77.1127 78.7004C64.7127 80.7004 63.6126 75.4004 69.2126 70.5004C73.8126 66.4004 75.1127 62.2004 74.3127 58.7004C74.2127 58.6004 74.1127 58.5004 74.1127 58.4004C72.8127 54.0004 65.2126 46.4004 53.8126 56.6004C55.4126 54.8004 59.3127 51.1004 64.6127 50.3004C68.0127 49.8004 72.4127 50.6004 74.9127 53.3004C76.6127 50.0004 78.8127 51.3004 79.3127 53.1004C79.8127 55.2004 72.3127 66.9004 76.8127 71.8004C81.4127 76.7004 89.5127 74.9004 92.1127 71.7004C95.7127 67.2004 92.8127 64.6004 90.9127 63.9004Z" fill="#E73D6D"/>
+                </mask>
+                <g mask="url(#mask0)">
+                    <g>
+                        <path transform="translate(-30, 0)" d="M-103.918 103.251L-111.597 106.542C-115.893 108.383 -120.834 107.888 -124.679 105.231C-133.696 99.001 -146 105.455 -146 116.415V271.5H188L185.42 125.291C185.294 118.155 175.992 115.512 172.133 121.516C169.552 125.53 163.856 125.979 160.678 122.42L150.079 110.549C145.864 105.828 138.409 106.058 134.493 111.029C131.345 115.023 125.732 116.082 121.346 113.507L115.539 110.099C109.79 106.725 102.558 107.233 97.3384 111.378C92.2806 115.395 85.3148 116.008 79.6331 112.937L78.546 112.349C73.4895 109.616 67.4318 109.461 62.2422 111.932L59.3335 113.317C53.4388 116.124 46.4152 114.915 41.7986 110.299C38.1732 106.673 32.9831 105.087 27.9504 106.065L24.5725 106.722C20.3331 107.546 15.9387 106.817 12.1932 104.666L4.60699 100.311C-2.14313 96.4364 -12.2167 102 -20 102C-20.686 102 -39.6829 101.265 -53.5949 94.4337C-57.0458 92.7392 -61.5327 93.8527 -63.131 97.3492C-65.1563 101.779 -71.3533 102.039 -73.7414 97.793L-76.2138 93.3976C-78.9116 88.6016 -85.3795 87.5811 -89.4229 91.3134L-98.667 99.8465C-100.211 101.272 -101.987 102.423 -103.918 103.251Z" fill="#E73D6D">
+                
+                            <animateTransform
+                                attributeName="transform"
+                                type="translate"
+                                dur="1s"
+                                repeatCount="1"
+                                values="0, 0; 10, -10; -15, -20; 0, -30; 20, -40; 0, -70; -10, -120;"
+                                fill="freeze"
+                            />
+                        </path>
+                        <animateTransform
+                            attributeName="transform"
+                            type="rotate"
+                            dur="1s"
+                            repeatCount="1"
+                            values="0; 2; -3; -4; 0; 5; -6; 0;"
+                            fill="freeze"
+                        />
+                    </g>
+                </g>
+            </svg>                
+        </div>
+    </div>
+</div>
+        </div>
+        <script src="js/main.js"></script>
+        <script src="js/vendor.js"></script>
+        <script src="js/custom.js"></script>
+    </body>
+</html>
